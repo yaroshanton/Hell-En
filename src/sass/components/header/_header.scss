@@ -1,0 +1,26 @@
+.header {
+    &__bg {
+        padding-top: 26px;
+        @include background("../images/header-bg-320.jpg", $size: 100% 100%);
+        @media (min-width:768px) {
+          @include background("../images/header-bg-768.jpg", $size: 100% 100%);
+        }
+        @media (min-width:1280px) {
+          @include background("../images/header-bg-1280.jpg", $size: 100% 100%);
+        }
+    }
+    &__nav {
+      @include flexbox(space-between, center);
+      @extend %cursor-pointer;
+      margin-bottom: 56px;
+    }
+}
+
+.logo {
+    width: 79px;
+    height: 32px;
+    @media (min-width:768px) {
+        width: 126px;
+        height: 46px;
+    }
+}

@@ -1,0 +1,172 @@
+.reviews {
+    padding: 45px 0 55px;
+    &__title {
+        font-size: 26px;
+        @extend %montserrat-bold;
+        color: $dark-bg-color;
+        text-align: center;
+        margin: 0 0 36px;
+    }
+}
+.carousel {
+    position: relative;
+    @media (min-width:1280px) {
+    	padding: 0 65px 0 80px;
+    }
+    @media (min-width:1680px) {
+    	padding: 0 152px 0 120px;
+    }
+    &-tap-to-right {
+        @include position(absolute, $right: 0, $bottom: 22px);
+        @extend %tap-to;
+        @include background("../images/right-arrow.png");
+        @media  (min-width: 768px){
+            bottom: 208px;
+            right: -20px;
+        }
+        @media (min-width: 1280px) {
+        	bottom: 265px;
+        	right: 10px;
+        }
+        @media (min-width: 1680px) {
+        	bottom: 265px;
+        	right: 95px;
+        }
+    }
+    &-tap-to-left {
+        @include position(absolute, $left: 0, $bottom: 22px);
+        @extend %tap-to;
+        @include background("../images/left-arrow.png");
+        @media (min-width: 768px) {
+        	bottom: 208px;
+        	left: -20px;
+        }
+        @media (min-width: 1280px) {
+        	bottom: 257px;
+        	left: 22px;
+        }
+        @media (min-width: 1680px) {
+        	bottom: 265px;
+        	left: 65px;
+        }
+    }
+	&__item {
+        box-shadow: 4px 7px 35px 11px $shadow-secondary-color;
+        padding: 22px 0 32px;
+        @media (min-width:768px) {
+            @include flexbox($flex-wrap: nowrap);
+            padding: 45px 60px 45px 36px;
+        }
+        @media (min-width:768px) {
+        	padding: 40px 95px 40px 85px;
+        }
+    }
+    &__tap {
+        display: flex;
+        justify-content: center;
+        margin-top: 17px;
+        height: 54px;
+        @media (min-width: 1280px) {
+        	margin-top: 38px;
+        }
+        @media (min-width: 1680px) {
+        	margin-top: 42px;
+        }
+        &-elements {
+            @media (max-width: 767px) {
+                &:not(:nth-child(-n+3)) {
+                	display: none;
+                }
+                &:first-child, &:nth-child(2) {
+                    margin-right: 12px;
+                }
+            }
+            @media (min-width: 768px) {
+                & img {
+                    @include transition($property: border, $duration: 0.4s);
+                }
+                &:hover img {
+                	border: 2px solid $primary-color;
+                	border-radius: 50%;
+                }
+                &:not(:last-child) {
+                    margin-right: 22px;
+                }
+            }
+            @media (min-width: 1280px) {
+            	&:not(:last-child) {
+            		margin-right: 36px;
+            	}
+            }
+        }
+    }
+}
+
+.image-wraper {
+    text-align: center;
+    &__face {
+        display: block;
+        text-align: center;
+        @media (min-width:768px) {
+            margin: 20px 0 15px;
+        }
+        @media (min-width:1280px) {
+        	margin: 0 0 20px;
+        }
+    }
+}
+.reviewer {
+    margin: 0 auto;
+    @media (max-width: 767px) {
+        width: 232px;
+        text-align: center;
+    }
+    @media (min-width: 768px) {
+        margin-left: 42px;
+    }
+    &__name {
+        font-size: 13px;
+        @extend %montserrat-bold;
+        color: $primary-color;
+        margin: 20px 0 5px;
+        @media (min-width: 768px) {
+            margin: 0 0 15px;
+            font-size: 18px;
+        }
+        @media (min-width: 1280px) {
+        	margin: 0 0 20px;
+        	font-size: 25px;
+        }
+    }
+    &__education {
+        margin: 0 0 15px;
+        font-size: 11px;
+        @extend %montserrat-reg;
+        color: $second-gray-color;
+        line-height: 1.5;
+        @media (min-width: 768px) {
+        	font-size: 13px;
+        }
+        @media (min-width: 1280px) {
+        	width: 440px;
+        }
+    }
+    &__review {
+        margin: 0;
+        font-size: 11px;
+        @extend %montserrat-reg;
+        color: $light-dark-color;
+        line-height: 1.8;
+        @media (min-width: 1280px) {
+        	font-size: 17px;
+        }
+        &-plus-text {
+            @media (max-width: 767px) {
+                display: none;
+            }
+        }
+        &-read-more {
+            color: $primary-color;
+        }
+    }
+}

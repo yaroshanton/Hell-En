@@ -1,0 +1,62 @@
+@mixin background($url, $size: cover, $position: top center, $repeat: no-repeat) {
+  background-image: url($url);
+  background-size: $size;
+  background-position: $position;
+  background-repeat: $repeat;
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin transition($property: all, $duration: 0.2s, $ease: linear) {
+  -webkit-transition: $property $duration $ease;
+  -moz-transition: $property $duration $ease;
+  -o-transition: $property $duration $ease;
+  transition: $property $duration $ease;
+}
+
+@mixin flexbox($justify-content: null, $align-items: null, $flex-direction: row, $flex-wrap: wrap) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-wrap: $flex-wrap;
+  flex-direction: $flex-direction;
+}
+
+//  Font 
+
+@mixin tahoma-bold {
+  font-family: "Tahoma", sans-serif;
+  font-weight: 700;
+}
+
+@mixin list_item_line($inleft, $border-line) {
+	&:not(:last-child)::after {
+		content: "";
+		display: block;
+		background-color: $gray-color;
+		@include position(absolute, $top: 0, $left: $inleft);
+		height: 100%;
+		border-left: $border-line;
+		z-index: 1;
+	}
+
+	&:first-child::after {
+		transform: translateY(10px);
+	}
+
+	&:last-child::after {
+		content: "";
+		display: block;
+		background-color: $gray-color;
+		border-left: $border-line;
+		@include position(absolute, $top: 0, $left: $inleft);
+		height: 10px;
+    z-index: 1;
+	}
+}

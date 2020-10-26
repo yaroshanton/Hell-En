@@ -1,0 +1,94 @@
+.wraper-free-lesson {
+  padding-bottom: 55px;
+    @media (min-width: 768px) {
+        @include flexbox($justify-content: space-between, $align-items: center, $flex-wrap: nowrap);
+        margin-bottom: 115px;
+    }
+
+    &__image {
+      display: block;
+      text-align: center;
+      @media (min-width:1680px) {
+      	margin-right: -108px;
+      }
+    }
+}
+.wraper-info-free-lesson {
+    @media (min-width: 768px) {
+      flex-basis: 285px;
+    }
+    @media (min-width: 1280px) {
+      flex-basis: 500px;
+    }
+    @media (min-width: 1280px) {
+      flex-basis: 605px;
+    }
+
+    &__title {
+      font-size: 20px;
+      @extend %montserrat-exbold;
+      color: $light-dark-color;
+      margin: 0 0 37px;
+
+      @media (min-width: 768px) {
+        font-size: 26px;
+        margin: 0 0 30px;
+      }
+
+      @media (min-width: 1280px) {
+        font-size: 48px;
+      }
+
+      @media (min-width: 1680px) {
+        font-size: 58px;
+        margin-bottom: 0 0 28px;
+      }
+    }
+
+    &__par {
+      font-size: 15px;
+      @extend %montserrat-bold;
+      margin: 0;
+      line-height: 1.35;
+
+      @media (min-width: 1280px) {
+        font-size: 18px;
+      }
+
+      @media (min-width: 1680px) {
+        font-size: 21px;
+      }
+
+      &--gray {
+        color: $gray-color;
+      }
+
+      &--light-dark {
+        color: $light-dark-color;
+        margin-bottom: 35px;
+
+        @media (min-width: 1680px) {
+          margin-bottom: 65px;
+        }
+      }
+
+      &--orange {
+        color: $primary-color;
+
+        @media (max-width: 1279px) {
+          display: block;
+        }
+      }
+    }
+
+    &__button {
+      @extend %button-free-lesson;
+      @extend %cursor-pointer;
+
+      @media (max-width: 767px) {
+        margin: 0 auto 35px;
+      }
+
+    }
+}
+

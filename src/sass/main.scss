@@ -1,0 +1,32 @@
+/*
+ * Все паршалы импортировать в этот файл
+ */
+@import '_font.scss';
+
+ @import "helpers/variables";
+ @import "helpers/placeholder";
+ @import "helpers/mixin";
+
+ @import 'normalize';
+ @import 'base';
+
+//  HEADER
+ @import "components/header/_header";
+ @import "components/header/burger.scss";
+ @import "components/header/free-lesson";
+ @import "components/header/_list-info-course";
+
+
+@import "components/section-problem/problem.scss";
+@import "components/section-method/method.scss";
+@import "components/section-program/program.scss";
+@import "components/choose-us/choose-us.scss";
+@import "components/section-teacher/teacher.scss";
+@import "components/section-guarantees/guarantees.scss";
+@import "components/section-reviews/reviews.scss";
+@import "components/form-registration/registration-form.scss";
+
+//FOOTER 
+
+@import "components/footer/_contacts.scss";
+@import "components/footer/footer.scss";

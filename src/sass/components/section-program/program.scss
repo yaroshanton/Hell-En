@@ -1,0 +1,184 @@
+.program {
+    background-color: $dark-bg-color;
+    padding-top: 50px;
+    // padding-bottom: 304px;
+    @include position(relative);
+    z-index: 2;
+    @media (min-width: 768px) {
+        // padding-bottom: 252px;
+    }
+    @media (min-width:1280px) {
+        padding-top: 70px;
+        // padding-bottom: 284px;
+        &::before {
+        	content: "";
+        	display: block;
+        	background-color: $gray-color;
+        	width: 100%;
+        	height: 2px;
+        	@include position(absolute, $top: 160px, $left: 0);
+        	z-index: 1;
+        }
+    }
+    @media (min-width: 1680px) {
+    	// padding-bottom: 60px;
+    }
+    &__title {
+        font-size: 20px;
+        @extend %montserrat-bold;
+        color: $white-color;
+        line-height: 1.65;
+        margin: 0 0 37px;
+        @media (max-width: 767px) {
+            text-align: center;
+        }
+        @media (min-width: 768px) {
+            font-size: 26px;
+            margin-bottom: 50px;
+        }
+        @media (min-width: 1280px) {
+            margin-bottom: 75px;
+            font-size: 42px;
+        }
+    }
+    &__list {
+        padding-bottom: 130px;
+        @media (max-width: 767px) {
+            margin-left: 62px;
+        }
+        @media (min-width: 768px) and (max-width: 1279px) {
+            margin-left: 91px;
+            padding-bottom: 108px;
+        }
+        @media (min-width: 1280px) {
+            @include flexbox(space-between);
+            padding-bottom: 240px;
+        }
+        @media (min-width:1680px) {
+            padding-bottom: 330px;
+        }
+    }
+}
+.wraper-positioning {
+    @include position(relative);
+}
+.wraper-program {
+    width: 100%;
+    height: 100%;
+    @include position(absolute, $top: 0, $left: 20px);
+    @include background("../images/our_program_image-380.jpg", $size: null, $position: right bottom);
+    @media (min-width: 768px) {
+        @include background("../images/our_program_image-768.jpg", $size: null, $position: right bottom);
+        left: 40px;
+        padding-bottom: 108px;
+    }
+    @media (min-width: 1280px) {
+    	@include background("../images/our_program_image-1280.jpg", $size: null, $position: left bottom);
+        padding-bottom: 240px;
+        left: -35px;
+    }
+    @media (min-width: 1680px) {
+    	@include background("../images/our_program_image-1680.jpg", $size: null, $position: left bottom);
+        padding-bottom: 330px;
+        left: -172px;
+    }
+}
+
+.semester {
+    position: relative;
+    &::before {
+        content: "";
+        display: block;
+        border-radius: 50%;
+        background-color: $primary-color;
+        @include position(absolute, $top: 8px, $left: 0);
+        width: 10px;
+        height: 10px;
+        z-index: 2;
+        @media (min-width: 1280px) {
+            left: 5px;
+            top: -58px;
+            transform: scale(1.7);
+        }
+    }
+    @media (max-width:767px) {
+    	padding-left: 36px;
+
+    	&:not(:last-child) {
+    		padding-bottom: 40px;
+    	}
+    }
+    @media (min-width:768px) and (max-width: 1279px) {
+        padding-left: 51px;
+        &:not(:last-child) {
+        	padding-bottom: 50px;
+        }
+    }
+    @media (max-width: 1279px) {
+        @include list_item_line(4px, 2px solid $gray-color);
+    }
+    
+    &__title {
+        margin: 0 0 10px;
+        font-size: 15px;
+        @extend %montserrat-bold;
+        color: $white-color;
+        text-transform: uppercase;
+        line-height: 1.9;
+        @media (min-width: 1280px) {
+        	font-size: 19px;
+        }
+    }
+}
+.semester__stage-list {
+    @media (min-width: 768px) {
+        @include flexbox();
+    }
+    @media (min-width: 1280px) {
+    	@include flexbox($flex-direction: column);
+    }
+}
+.semester__stage {
+    width: 155px;
+    @media (min-width: 768px) {
+        &:not(:last-child) {
+            margin-right: 25px;
+        }
+    }
+    @media (min-width: 1280px) {
+        width: 205px;
+        margin-right: 0;
+    }
+    &--last {
+        width: min-content;
+    }
+    &-title {
+        font-size: 13px;
+        margin: 40px 0 10px;
+    	@extend %montserrat-reg;
+        color: $primary-color;
+        padding-left: 40px;
+        @include position(relative);
+        @media (min-width: 1280px) {
+        	font-size: 18px;
+        }
+        &::before {
+            @extend %before-line;
+            @include position(absolute, $top: 7px, $left: 0);
+        }
+        &--hidden {
+            visibility: hidden;
+        }
+    }
+    &-desc {
+        font-size: 11px;
+        @extend %montserrat-reg;
+        color: rgba(133, 133, 133, 0.5);
+        line-height: 1.8;
+        margin: 0;
+        @media (min-width: 1280px) {
+        	font-size: 19px;
+        }
+    }
+}
+

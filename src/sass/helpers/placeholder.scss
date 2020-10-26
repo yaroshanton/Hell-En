@@ -1,0 +1,64 @@
+%cursor-pointer {
+    cursor: pointer;
+}
+
+
+// FONT
+
+%montserrat-reg {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+%montserrat-medium {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+%montserrat-semi-bold {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+%montserrat-bold {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+%montserrat-exbold {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+}
+
+%tahoma-bold {
+  font-family: "Tahoma", sans-serif;
+  font-weight: 700;
+}
+
+%before-line {
+  content: "";
+  display: block;
+  background-color: $primary-color;
+  width: 25px;
+  height: 2px;
+}
+
+%tap-to {
+  @extend %cursor-pointer;
+  width: 20px;
+  height: 11px;
+  background: transparent;
+  border: none;
+  @media (min-width: 768px) {
+    width: 25px;
+    height: 14px;
+  }
+}
+
+%button-free-lesson {
+  display: block;
+  font-size: 12px;
+  @extend %tahoma-bold;
+  color: $white-color;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: $primary-color;
+  padding: 19px 16px;
+  border: none;
+}

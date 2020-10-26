@@ -1,0 +1,106 @@
+.list-info-course {
+    @include flexbox();
+    margin-bottom: 52px;
+    margin-top: 31px;
+    @media (min-width: 768px) {
+        justify-content: space-between;
+    }
+    @media (min-width: 1280px) {
+      margin-bottom: 85x;
+    }
+    @media (min-width: 1280px) {
+      margin-bottom: 125px;
+    }
+}
+.list-info-course__item {
+    @include flexbox($align-items: center);
+    flex-basis: 200px;
+    position: relative;
+    @media (max-width: 767px) {
+        margin-left: 50px;
+
+        &:not(:last-child) {
+          margin-bottom: 30px;
+        }
+    }
+    @media (max-width: 1279px) {
+      &::before {
+        position: absolute;
+        content: "";
+        display: block;
+        left: 53px;
+        top: 10px;
+        width: 4px;
+        height: 36px;
+        background-color: $white-color;
+      }
+    }
+    @media (min-width: 1280px) {
+      &:first-child {
+          flex-basis: 38%;
+      }
+      &:nth-child(2) {
+        flex-basis: 34%;
+      }
+      &:last-child {
+        flex-basis: 28%;
+      }
+    }
+    
+}
+
+.list-info-course__icon {
+    width: 56px;
+    height: 56px;
+    border: 2px solid $primary-color;
+    
+    @media (min-width: 1280px) {
+        width: 102px;
+        height: 102px;
+    }
+    & svg {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        fill: $primary-color;
+        @media (min-width: 1280px) {
+          transform: scale(1.22),
+          translate(-50%, -50%);
+        }
+    }
+}
+.list-info-course__desc {
+  font-size: 13px;
+  @extend %montserrat-bold;
+  color: $light-dark-color;
+  line-height: 1.5;
+  margin: 0;
+  @media (max-width: 1279px) {
+    margin-left: 13px;
+    width: 130px;
+  }
+  @media (min-width: 1280px) {
+    padding: 13px 0;
+    background-color: $white-color;
+    transform: translateX(-22px);
+    font-size: 18px;
+    width: 270px;
+  }
+  @media (min-width: 1680px) {
+    font-size: 21px;
+  }
+  &--310 {
+    max-width: 310px;
+    @media (min-width: 1680px) {
+      min-width: 310px;
+      max-width: 310px;
+    }
+  }
+  &--250 {
+    max-width: 250px;
+  }
+  &--230 {
+    max-width: 230px;
+  }
+}

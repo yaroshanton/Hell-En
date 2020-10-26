@@ -1,0 +1,67 @@
+.wraper-site-nav {
+    @include flexbox($align-items: center);
+}
+.burger {
+    @extend %cursor-pointer;
+    @include transition();
+
+    &:hover {
+        transform: scale(1.2);
+    }
+
+    @media (min-width: 1280px) {
+        display: none;
+    }
+
+    &__line {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: $light-dark-color;
+
+      &:not(:last-child) {
+        margin-bottom: 3px;
+      }
+    }
+}
+.site-navigation {
+    display: none;
+    @media (min-width: 1280px) {
+        @include flexbox(space-between, center);
+        &__item {
+          margin-right: 44px;
+          cursor: pointer;
+        }
+
+        &__link {
+            font-size: 14px;
+            @include tahoma-bold;
+            color: $gray-color;
+            text-transform: uppercase;
+            @include transition();
+            
+            &:hover,
+            &:focus {
+                color: $primary-color;
+            }
+        }
+    }
+    
+}
+.header__button-cons {
+    display: none;
+    @extend %cursor-pointer;
+    @media (min-width: 768px) {
+        display: block;
+        padding: 22px;
+        font-size: 11px;
+        @include tahoma-bold;
+        color: $primary-color;
+        text-transform: uppercase;
+        border: 2px solid $primary-color;
+        background: transparent;
+    }
+    @media (min-width: 768px) and (max-width: 1279px) {
+        margin-right: 44px;
+    }
+}

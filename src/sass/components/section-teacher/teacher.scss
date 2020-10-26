@@ -1,0 +1,129 @@
+.teacher {
+    padding-bottom: 50px;
+     @media (min-width: 768px) {
+     	padding-bottom: 55px;
+     }
+
+     @media (min-width: 1280px) {
+     	padding-bottom: 90px;
+     }
+
+     @media (min-width: 1680px) {
+     	padding-bottom: 135px;
+     }
+    &__title {
+        font-size: 20px;
+        @extend %montserrat-bold;
+        color: $dark-bg-color;
+        line-height: 1.5;
+        margin: 0 0 20px;
+        @media (min-width: 768px) {
+            font-size: 26px;
+            margin-bottom: 29px;
+        }
+        @media (min-width: 1280px) {
+        	font-size: 42px;
+        	margin-bottom: 43px;
+        }
+        @media (min-width: 1680px) {
+        	font-size: 46px;
+        	margin-bottom: 50px;
+        }
+    }
+    &__wraper {
+        @include flexbox();
+    }
+    &__info {
+        @media (min-width: 768px) {
+            flex-basis: 397px;
+            margin-left: 44px;
+        }
+
+        @media (min-width: 1280px) {
+            flex-basis: 602px;
+            margin-left: 91px;
+        }
+        @media (min-width: 1680px) {
+        	flex-basis: 660px;
+        }
+    }
+    &__name {
+        font-size: 16px;
+        @extend %montserrat-exbold;
+        color: $dark-bg-color;
+        line-height: 1.8;
+        @media (max-width: 767px) {;
+            margin: 18px 0 0; 
+        }
+        @media (min-width: 768px) {
+        	font-size: 20px;
+            margin: -8px 0 6px;
+            
+        }
+        @media (min-width: 1280px) {
+        	font-size: 29px;
+        	margin: 0;
+        }
+    }
+    &__exp-list {
+        border-top: 1px solid $gray-color;
+        padding-top: 25px;
+        @include position(relative);
+    }
+    &__exp-step {
+        position: relative;
+        font-size: 13px;
+        @extend %montserrat-bold;
+        color: $dark-bg-color;
+        padding-left: 36px;
+        padding-bottom: 19px;
+        @media (min-width: 1280px) {
+            font-size: 17px;
+            padding-bottom: 28px;
+            padding-left: 45px;
+        }
+        &::before {
+            content: "";
+            background-image: url(../images/sprite/check.png);
+            @include position(absolute, $top: 0, $left: 0);
+            width: 19px;
+            height: 16px;
+            display: block;
+        }
+    }
+    &__education {
+        font-size: 11px;
+        @extend %montserrat-reg;
+        color: $second-gray-color;
+        line-height: 1.8;
+        margin: 0 0 15px;
+        @media (min-width: 1280px) {
+            font-size: 17px;
+            margin: 0 0 28px;
+        }
+    }
+    &__link-certificate {
+        font-size: 11px;
+        @extend %montserrat-reg;
+        color: $primary-color;
+        @media (min-width: 1280px) {
+        	font-size: 17px;
+        	margin: 0 0 28px;
+        }
+    }
+}
+.wraper-education {
+    position: relative;
+    padding-top: 20px;
+    @media (max-width:767px) {
+        padding-left: 10px;
+    }
+
+    &::before {
+    	@extend %before-line;
+        @include position(absolute, $top: 0, $left: 10px);
+        @media (min-width: 768px) {
+            left: 0;
+        }
+    }
+}

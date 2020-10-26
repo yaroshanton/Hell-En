@@ -1,0 +1,114 @@
+.registration {
+    padding: 55px 0;
+    text-align: center;
+    @media (max-width: 380px) {
+        @include background("../images/image-form-380.jpg");
+    }
+    @media (min-width: 381px) {
+    	@include background("../images/image-form-1280.jpg", $position: top right);
+    }
+    @media (min-width: 768px) {
+        & .container {
+            width: 550px;
+            margin: 0 auto;
+        }
+    }
+    @media (min-width: 1680px) {
+    	@include background("../images/image-form-1680.jpg");
+    }
+    @media (min-width: 1280px) {
+    	& .container {
+    		width: 940px;
+    	}
+    }
+    &__title {
+        font-size: 14px;
+        @extend %montserrat-exbold;
+        color: $white-color;
+        line-height: 1.8;
+        margin: 0 0 20px;
+        @media (min-width: 768px) {
+            font-size: 22px;
+            margin: 0 0 30px;
+        }
+        @media (min-width: 1280px) {
+        	font-size: 38px;
+        	margin: 0 0 45px;
+        }
+        @media (min-width: 1680px) {
+        	margin: 0 0 65px;
+        }
+        & span {
+            color: $primary-color;
+        }
+    }
+    &__desc {
+        font-size: 11px;
+        @extend %montserrat-semi-bold;
+        color: $white-color;
+        line-height: 1.8;
+        margin: 0 0 25px;
+        @media (min-width: 768px) {
+        	font-size: 15px;
+        	margin: 0 0 40px;
+        }
+        @media (min-width: 1280px) {
+        	font-size: 18px;
+            margin: 0 auto 50px;
+            width: 550px;
+        }
+        @media (min-width: 1680px) {
+            font-size: 25px;
+            width: 760px;
+        }
+        & span {
+            color: $primary-color;
+        }
+    }
+}
+.registration-form {
+    @include flexbox($flex-direction: column, $align-items: center);
+    &__name, &__number {
+        border: 1px solid $white-color;
+        background: transparent;
+        font-size: 13px;
+        @extend %montserrat-semi-bold;
+        color: $white-color;
+        padding: 15px 20px;
+        @media (min-width: 768px) {
+            width: 400px;
+        }
+        @media (min-width: 1280px) {
+            font-size: 21px;
+            width: 620px;
+            padding: 23px 27px;
+        }
+        @media (min-width: 1680px) {
+        	margin: 0 0 65px;
+        }
+
+    }
+    &__name {
+        margin-bottom: 20px;
+        @media (min-width: 1280px) {
+        	margin-bottom: 28px;
+        }
+    }
+    &__number {
+        margin-bottom: 55px;
+        @media (min-width: 768px) {
+        	margin-bottom: 30px;
+        }
+        @media (min-width: 1280px) {
+        	margin-bottom: 57px;
+        }
+    }
+    &__enter {
+        @extend %button-free-lesson;
+        margin: 0 auto;
+        @media (min-width: 1280px) {
+            padding: 25px 17px;
+            font-size: 14px;
+        }
+    }
+}

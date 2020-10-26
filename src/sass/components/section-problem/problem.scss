@@ -1,0 +1,115 @@
+.problem {
+    @include position(relative);
+    padding-top: 50px;
+    @media (min-width: 768px) {
+    	padding-top: 60px;
+    }
+    @media (min-width: 1280px) {
+    	padding-top: 75px;
+    }
+    @media (min-width: 1680px) {
+    	padding-top: 115px;
+    }
+    &:before {
+        content: "";
+        @include position(absolute, $top: 0);
+        z-index: 1;
+        width: 100%;
+        height: 519px;
+        background-color: $dark-bg-color;
+        @media (min-width: 768px){
+                height: 333px;
+                @include background("../images/fire.png", $size: 210px 297px, $position: right bottom);
+        }
+        @media (min-width: 1280px) {
+            height: 525px;
+        	@include background("../images/fire-1280.png", $size: 356px 534px, $position: right bottom);
+        }
+        @media (min-width: 1680px) {
+            height: 560px;
+        	@include background("../images/fire-1680.png", $size: 392px 584px, $position: right bottom);
+        }
+    }
+    &__wraper {
+        @include position(relative);
+        z-index: 2;
+    }
+}
+.counter-list__title {
+    font-size: 20px;
+    margin: 0 0 20px;
+	@extend %montserrat-exbold;
+	color: $white-color;
+	line-height: 1.5;
+	&-span {
+		color: $primary-color;
+	}
+
+	@media (min-width: 768px) {
+        width: 50%;
+        margin: 0 0 22px;
+        font-size: 26px;
+	}
+
+	@media (min-width: 1280px) {
+		width: 65%;
+        font-size: 42px;
+        margin: 0 0 48px;
+	}
+
+	@media (min-width: 1680px) {
+		width: 65%;
+        font-size: 46px;
+        margin: 0 0 62px;
+	}
+}
+.counter-list {
+    background-color: $white-color;
+    padding: 20px 30px 30px 30px;
+    counter-reset: problem;
+    box-shadow: 4px 7px 16px 6px $shadow-color;
+    margin-bottom: 70px;
+    @media (min-width: 768px) {
+        @include flexbox(space-between);
+        padding: 40px 70px 40px 108px;
+    }
+    @media (min-width: 1280px) {
+    	@include flexbox(space-between);
+    	padding: 55px 105px 50px 100px;
+    }
+}
+.counter-list__item {
+    font-size: 13px;
+    @extend %montserrat-bold;
+    color: $light-dark-color;
+    line-height: 1.5;
+    counter-increment: problem;
+    position: relative;
+    &::before {
+        display: block;
+        content: "0"counter(problem);
+        margin-left: 35px;
+        margin-bottom: 15px;
+        color: $primary-color;
+    }
+    &::after {
+        @extend %before-line;
+        @include position(absolute, $top: 8px, $left: 0);
+    }
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    @media (min-width: 768px) {
+        flex-basis: 50%;
+        &:nth-child(2n+1) {
+            flex-basis: 40%;
+        }
+    }
+    @media (min-width: 1280px) {
+    	flex-basis: 26%;
+        font-size: 18px;
+    	&:nth-child(2n+1) {
+    		flex-basis: 26%;
+    	}
+    }
+}

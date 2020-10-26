@@ -1,0 +1,127 @@
+.method {
+    &__title {
+        font-size: 20px;
+        @extend %montserrat-exbold;
+        color: $light-dark-color;
+        line-height: 1.65;
+        text-align: center;
+        @media (min-width: 768px) {
+        	font-size: 26px;
+        }
+        @media (min-width: 1280px) {
+        	font-size: 42px;
+        }
+        @media (min-width: 1680px) {
+        	font-size: 46px;
+        }
+    }
+    &__list {
+        margin: 38px 0 53px;
+        @media (min-width: 768px) {
+            @include flexbox(center);
+        }
+        @media (min-width: 1280px) {
+        	margin: 45px 0 100px;
+        }
+        @media (min-width: 1280px) {
+        	margin: 50px 0 130px;
+        }
+    }
+}
+.method__item {
+	box-shadow: 4px 6px 23px 8px $shadow-color;
+	text-align: center;
+    padding: 30px 20px 25px;
+    width: 280px;
+    @include transition();
+    @media (max-width: 767px) {
+        margin: 0 -5px;
+        &:not(:last-child) {
+        	margin-bottom: 16px;
+        }
+    }
+    @media (min-width: 768px) {
+        width: 290px;
+    }
+    @media (min-width: 768px) and (max-width: 1279px) {
+    	&:nth-child(2n+1) {
+    		margin-right: 20px;
+        }
+        &:not(:nth-last-child(-n+2)) {
+        	margin-bottom: 16px;
+        }
+    }
+    @media (min-width: 1280px) {
+        width: 390px;
+        &:not(:nth-child(3n)) {
+        	margin-right: 20px;
+        }
+
+        &:not(:nth-last-child(-n+3)) {
+        	margin-bottom: 16px;
+        }
+    }
+    @media (min-width: 1680px) {
+    	width: 430px;
+    }
+
+	& svg {
+        fill: $primary-color;
+        @include transition();
+	}
+
+	&-title {
+		font-size: 13px;
+		@extend %montserrat-bold;
+		color: $light-dark-color;
+        line-height: 1.5;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        @include position(relative);
+        @include transition();
+        &::before {
+            @include transition();
+            @extend %before-line;
+            @include position(absolute,  $bottom: -20px, $left: 50%);
+            transform: translateX(-50%);
+        }
+        @media (min-width: 1280px) {
+        	font-size: 18px;
+        }
+        @media (min-width: 1680px) {
+        	font-size: 21px;
+        }
+	}
+
+	&-desc {
+        @include transition();
+		font-size: 11px;
+		@extend %montserrat-reg;
+		color: $gray-color;
+        line-height: 1.8;
+        @media (min-width: 1280px) {
+        	font-size: 15px;
+        }
+        @media (min-width: 1280px) {
+        	font-size: 19px;
+        }
+    }
+    &:hover {
+        box-shadow: none;
+        color: $white-color;
+        background-color: $primary-color;
+        & svg {
+        	fill: $white-color;
+        }
+        .method__item-title {
+        	color: $white-color;
+        }
+        .method__item-title::before {
+        	background-color: $white-color;
+        }
+        .method__item-desc {
+        	color: $white-color;
+        }
+
+    }
+}
